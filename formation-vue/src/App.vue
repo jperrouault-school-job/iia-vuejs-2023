@@ -38,6 +38,9 @@ function supprimerPrenom(prenom) {
   prenoms.value.splice(index, 1);
 }
 
+
+const couleur = ref('orange');
+
 </script>
 
 <template>
@@ -67,6 +70,19 @@ function supprimerPrenom(prenom) {
 
     <input type="text" v-model="saisiePrenom" />
     <button @click="ajouterPrenom()">Ajouter</button>
+
+
+    <hr />
+
+    <input type="color" v-model="couleur" />
+
+    <select v-model="couleur">
+      <option value="red">Rouge</option>
+      <option value="blue">Bleu</option>
+      <option value="orange">Orange</option>
+    </select>
+
+    <p :style="{ color: couleur }">Texte en couleur</p>
 
   </main>
 </template>
