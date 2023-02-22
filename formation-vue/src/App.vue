@@ -23,6 +23,21 @@ function valider(event) {
   console.log(event);
   alert('ok');
 }
+
+
+const saisiePrenom = ref('');
+
+function ajouterPrenom() {
+  prenoms.value.push(saisiePrenom.value);
+}
+
+function supprimerPrenom(prenom) {
+  const index = prenoms.value.indexOf(prenom); // On récupère la position du prénom à supprimer
+  
+  // On supprime un élément du tableau à partir de l'index
+  prenoms.value.splice(index, 1);
+}
+
 </script>
 
 <template>
@@ -46,10 +61,12 @@ function valider(event) {
 
     <ul>
       <li v-for="p of prenoms" :key="p">
-        {{ p }}
+        {{ p }} <button @click="supprimerPrenom(p)">SUPPRIMER</button>
       </li>
     </ul>
 
+    <input type="text" v-model="saisiePrenom" />
+    <button @click="ajouterPrenom()">Ajouter</button>
 
   </main>
 </template>
