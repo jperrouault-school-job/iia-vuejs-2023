@@ -47,6 +47,18 @@ const couleurs = ref([
   { value: 'yellow', text: 'Jaune' }
 ]);
 
+const saisieCouleur = ref('');
+const saisieTexte = ref('');
+
+function ajouterCouleur() {
+  const nouvelleCouleur = {
+    value: saisieCouleur.value,
+    text: saisieTexte.value
+  };
+
+  couleurs.value.push(nouvelleCouleur);
+}
+
 </script>
 
 <template>
@@ -80,7 +92,9 @@ const couleurs = ref([
 
     <hr />
 
-    <input type="color" v-model="couleur" />
+    <input type="color" v-model="saisieCouleur" />
+    <input type="text" v-model="saisieTexte" />
+    <button @click="ajouterCouleur()">Ajouter la couleur</button>
 
     <select v-model="couleur">
       <option
