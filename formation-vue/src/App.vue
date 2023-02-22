@@ -40,6 +40,12 @@ function supprimerPrenom(prenom) {
 
 
 const couleur = ref('orange');
+const couleurs = ref([
+  { value: 'orange', text: 'Orange' },
+  { value: 'red', text: 'Rouge' },
+  { value: 'blue', text: 'Bleue' },
+  { value: 'yellow', text: 'Jaune' }
+]);
 
 </script>
 
@@ -77,9 +83,11 @@ const couleur = ref('orange');
     <input type="color" v-model="couleur" />
 
     <select v-model="couleur">
-      <option value="red">Rouge</option>
-      <option value="blue">Bleu</option>
-      <option value="orange">Orange</option>
+      <option
+        v-for="c of couleurs"
+        :value="c.value">
+          {{ c.text }}
+      </option>
     </select>
 
     <p :style="{ color: couleur }">Texte en couleur</p>
