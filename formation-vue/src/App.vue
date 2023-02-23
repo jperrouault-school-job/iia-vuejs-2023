@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue';
+import AscBold from './components/AscBold.vue';
 
 const prenom = ref('Jérémy');
 const prenoms = ref([
@@ -59,6 +60,8 @@ function ajouterCouleur() {
   couleurs.value.push(nouvelleCouleur);
 }
 
+const chat = ref('Pica');
+
 </script>
 
 <template>
@@ -105,6 +108,17 @@ function ajouterCouleur() {
     </select>
 
     <p :style="{ color: couleur }">Texte en couleur</p>
+
+    <hr />
+
+    <!-- <AscBold />
+    <asc-bold /> -->
+
+    <asc-bold :chat="prenom">
+      <template #gras>TEXTE {{ chat }} GRAS</template>
+      <template #pas-gras>Texte en pas gras</template>
+    </asc-bold>
+
 
   </main>
 </template>
