@@ -2,6 +2,7 @@
 import { ref } from 'vue';
 import AscBold from './components/AscBold.vue';
 import AscTextField from './components/AscTextField.vue';
+import Popup from './components/Popup.vue';
 
 const prenom = ref('Jérémy');
 const prenoms = ref([
@@ -123,6 +124,14 @@ const chat = ref('Pica');
     <hr />
 
     <asc-text-field label="Le prénom" v-model="prenom" />
+
+    <hr />
+
+    <popup titre="Le titre de la popup">
+      <p>Le contenu de la popup ...</p>
+      <p>Blablabla</p>
+      <button>OK !</button>
+    </popup>
 
   </main>
 </template>
