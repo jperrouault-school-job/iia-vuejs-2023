@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue';
 import AscBold from './components/AscBold.vue';
+import AscTextField from './components/AscTextField.vue';
 
 const prenom = ref('Jérémy');
 const prenoms = ref([
@@ -119,6 +120,9 @@ const chat = ref('Pica');
       <template #pas-gras>Texte en pas gras</template>
     </asc-bold>
 
+    <hr />
+
+    <asc-text-field label="Le prénom" :valeur="prenom" />
 
   </main>
 </template>
