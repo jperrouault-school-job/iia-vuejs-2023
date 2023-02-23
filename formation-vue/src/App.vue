@@ -122,7 +122,7 @@ const chat = ref('Pica');
 
     <hr />
 
-    <asc-text-field label="Le prénom" :valeur="prenom" />
+    <asc-text-field label="Le prénom" v-model="prenom" />
 
   </main>
 </template>

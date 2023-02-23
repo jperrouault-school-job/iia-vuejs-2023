@@ -2,7 +2,7 @@
 
   <div>
     <label>{{ label }}</label>
-    <input type="text" :value="valeur" />
+    <input type="text" :value="modelValue" />
   </div>
 
 </template>
@@ -11,7 +11,7 @@
 
 defineProps({
   label: String,
-  valeur: String
+  modelValue: String
 });
 
 </script>
