@@ -4,12 +4,15 @@ import App from './App.vue';
 // import DemoDirective from './directives/demo';
 // import NotifService from './services/notif';
 import DemoPlugin from './plugins/demo';
+import router from './router';
 
 import './assets/main.css';
 
 const app = createApp(App);
 
+// On associe les plugins à l'application Vue
 app.use(DemoPlugin);
+app.use(router); // Pour VueRouter, c'est le minimum !
 
 // // On associe les composants à l'application Vue
 // app.component('btn-name', BtnName);

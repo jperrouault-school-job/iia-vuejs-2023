@@ -76,6 +76,8 @@ const chat = ref('Pica');
   </header>
 
   <main>
+    <router-view />
+
     <p :class="prenom">{{ prenom }}</p>
     <input type="text" v-model="prenom" @keyup.enter="valider($event)" />
 
