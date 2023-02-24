@@ -3,7 +3,6 @@ import { ref } from 'vue';
 import AscBold from './components/AscBold.vue';
 import AscTextField from './components/AscTextField.vue';
 import Popup from './components/Popup.vue';
-import BtnName from './components/BtnName.vue';
 
 const prenom = ref('Jérémy');
 const prenoms = ref([
