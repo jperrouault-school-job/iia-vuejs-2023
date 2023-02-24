@@ -20,4 +20,11 @@ function charger() {
     .then(result => posts.value = result);
 }
 
+async function chargerAsync() {
+  const resp = await fetch('https://jsonplaceholder.typicode.com/posts');
+  const result = await resp.json();
+  
+  posts.value = result;
+}
+
 </script>
