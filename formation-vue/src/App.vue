@@ -76,6 +76,18 @@ const chat = ref('Pica');
   </header>
 
   <main>
+    <nav>
+      <ul>
+        <li>
+          <router-link to="/">Accueil</router-link>
+        </li>
+
+        <li>
+          <router-link :to="{ name: 'prenom' }">Liste des prénoms</router-link>
+        </li>
+      </ul>
+    </nav>
+
     <router-view />
 
     <p :class="prenom">{{ prenom }}</p>
