@@ -1,10 +1,14 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from './views/HomeView.vue';
+import PrenomView from './views/PrenomView.vue';
 
 // Définition des routes
 const routes = [
   {
     path: '/', name: 'home', component: HomeView
+  },
+  {
+    path: '/prenom', name: 'prenom', component: PrenomView
   }
 ];
 
