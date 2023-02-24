@@ -1,9 +1,11 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, inject } from 'vue';
 import AscBold from './components/AscBold.vue';
 import AscTextField from './components/AscTextField.vue';
 import Popup from './components/Popup.vue';
 import PrenomListe from './components/PrenomListe.vue';
+
+const $notif = inject('$notif');
 
 const prenom = ref('Jérémy');
 const prenoms = ref([
@@ -14,6 +16,7 @@ const prenoms = ref([
 function changer() {
   // Modifier la valeur de prénom : "Nouveau prénom"
   prenom.value = "Nouveau prénom";
+  $notif.alerter("Le prénom a été changé !");
 }
 
 // function valider(event) {
