@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from './views/HomeView.vue';
 import PrenomView from './views/PrenomView.vue';
+import PostsView from './views/PostsView.vue';
 
 // Définition des routes
 const routes = [
@@ -9,6 +10,9 @@ const routes = [
   },
   {
     path: '/prenom', name: 'prenom', component: PrenomView
+  },
+  {
+    path: '/posts', name: 'posts', component: PostsView
   }
 ];
 
