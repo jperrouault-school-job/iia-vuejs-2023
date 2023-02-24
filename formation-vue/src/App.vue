@@ -138,7 +138,8 @@ const chat = ref('Pica');
 
     <btn-name v-for="p of prenoms" :key="p"
               :name="p"
-              btn-label="Afficher"
-              :color="saisieCouleur" />
+              btn-label="Supprimer"
+              :color="saisieCouleur"
+              @action-au-clique="supprimerPrenom(p)" />
   </main>
 </template>
