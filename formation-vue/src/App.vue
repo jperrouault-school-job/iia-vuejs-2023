@@ -137,7 +137,9 @@ const chat = ref('Pica');
 
     <hr />
 
-    <btn-name name="Jérémy" btn-label="Afficher" color="red" />
-
+    <btn-name v-for="p of prenoms" :key="p"
+              :name="p"
+              btn-label="Afficher"
+              :color="saisieCouleur" />
   </main>
 </template>
