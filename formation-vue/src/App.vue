@@ -16,7 +16,7 @@ const prenoms = ref([
 function changer() {
   // Modifier la valeur de prénom : "Nouveau prénom"
   prenom.value = "Nouveau prénom";
-  $notif.alerter("Le prénom a été changé !");
+  $notif.error("Le prénom a été changé !");
 }
 
 // function valider(event) {
