@@ -3,6 +3,7 @@ import { ref } from 'vue';
 import AscBold from './components/AscBold.vue';
 import AscTextField from './components/AscTextField.vue';
 import Popup from './components/Popup.vue';
+import PrenomListe from './components/PrenomListe.vue';
 
 const prenom = ref('Jérémy');
 const prenoms = ref([
@@ -133,7 +134,6 @@ const chat = ref('Pica');
       <button>OK !</button>
     </popup>
 
-
     <hr />
 
     <btn-name v-for="p of prenoms" :key="p"
@@ -141,5 +141,14 @@ const chat = ref('Pica');
               btn-label="Supprimer"
               :color="saisieCouleur"
               @action-au-clique="supprimerPrenom(p)" />
+
+
+    <hr />
+
+    <prenom-liste :prenoms="prenoms">
+      <template #btn="{ prenom }">
+        TEST {{ prenom }}
+      </template>
+    </prenom-liste>
   </main>
 </template>
