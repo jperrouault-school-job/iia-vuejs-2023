@@ -150,5 +150,10 @@ const chat = ref('Pica');
         TEST {{ prenom }}
       </template>
     </prenom-liste>
+
+    <hr />
+
+    <p v-demo:[prenom].moda>Utilisateur directive Démo</p>
+
   </main>
 </template>
