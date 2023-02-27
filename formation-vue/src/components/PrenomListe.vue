@@ -1,15 +1,10 @@
 <template>
-  <template v-for="p of prenoms">
-    <slot name="btn" :prenom="p">
-      <btn-name :key="p"
-                :name="p"
-                color="white"
-                btn-label="RIEN" />
-    </slot>
-  </template>
+  <prenom-crud :prenoms="prenoms" />
 </template>
   
 <script setup>
+import PrenomCrud from './PrenomCrud.vue';
+
 defineProps({
   prenoms: Array
 });

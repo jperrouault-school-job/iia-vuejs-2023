@@ -4,13 +4,13 @@ import AscBold from './components/AscBold.vue';
 import AscTextField from './components/AscTextField.vue';
 import Popup from './components/Popup.vue';
 import PrenomListe from './components/PrenomListe.vue';
+import { usePrenomStore } from '@/stores/prenom';
 
 const $notif = inject('$notif');
+const prenomStore = usePrenomStore();
 
 const prenom = ref('Jérémy');
-const prenoms = ref([
-  'Toto', 'Tata', 'Titi'
-]);
+const prenoms = prenomStore.prenoms;
 
 
 function changer() {
@@ -35,14 +35,14 @@ function valider(event) {
 const saisiePrenom = ref('');
 
 function ajouterPrenom() {
-  prenoms.value.push(saisiePrenom.value);
+  prenoms.push(saisiePrenom.value);
 }
 
 function supprimerPrenom(prenom) {
-  const index = prenoms.value.indexOf(prenom); // On récupère la position du prénom à supprimer
+  const index = prenoms.indexOf(prenom); // On récupère la position du prénom à supprimer
   
   // On supprime un élément du tableau à partir de l'index
-  prenoms.value.splice(index, 1);
+  prenoms.splice(index, 1);
 }
 
 
