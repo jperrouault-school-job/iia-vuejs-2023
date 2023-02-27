@@ -76,6 +76,8 @@ const chat = ref('Pica');
   </header>
 
   <main>
+    <v-btn variant="flat" color="error">Bouton démo</v-btn>
+
     <nav>
       <ul>
         <li>
